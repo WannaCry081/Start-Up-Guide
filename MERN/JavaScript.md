@@ -49,7 +49,7 @@ $ npm run dev
 ```
 If tailwindcss styles are not reflecting, refer to the [official vite+tailwindcss setup guide](https://tailwindcss.com/docs/guides/vite).
 
-4. Create a `jsconfig.js` then copy paste the contents of the code below
+4. Create a `jsconfig.json` then copy paste the contents of the code below
 
 ```json
 {
@@ -159,14 +159,16 @@ $ mkdir backend && cd backend
 $ npm init -y
 
 # Create a src directory and main index.ts file
-$ mkdir src && touch index.ts
+$ mkdir src && cd src && touch index.js
 ```
 2. Update the contents of your `package.json`, copy and paste the command below to your `package.json`
 ```JavaScript
 // Update Package.json
 {
-    "type" : "module"
-    "server": "nodemon src/index.js"
+    "type": "module",
+    "scripts": {
+        "server" : "nodemon src/index.js"
+    },
 }
 ```
 
@@ -181,7 +183,6 @@ $ npm i express express-async-handler dotenv cookie-parser jsonwebtoken bcryptjs
 4. Build and run the backend:
 ```powershell
 # To run the backend program
-$ npm run build
 $ npm run server
 ```
 
