@@ -157,15 +157,17 @@ $ mkdir backend && cd backend
 $ npm init -y
 
 # Create a src directory and main index.ts file
-$ mkdir src && touch index.ts
+$ mkdir src && cd src && touch index.ts
 ```
 2. Configure `package.json` and `tsconfig.json`:
 ```JavaScript
 // Update Package.json
 {
     "type" : "module"
-    "build" : "tsc"
-    "server": "nodemon dist/index.js"
+    "scripts": {
+        "build" : "tsc",
+        "server" : "nodemon dist/index.js"
+    },
 }
 ```
 
@@ -188,7 +190,7 @@ $ mkdir src && touch index.ts
 # Typescript and utility packages
 $ npm install typescript --save-dev 
 $ npm i -D @types/node
-$ npm -D nodemon 
+$ npm i -D nodemon 
 
 # Backend essential packages
 $ npm i express express-async-handler dotenv cookie-parser jsonwebtoken bcryptjs mongoose cors multer 
