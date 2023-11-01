@@ -86,7 +86,6 @@ After installing the necessary packages and `shadcn-ui`. Next is to configure `t
 
 ```JavaScript
 // Update vite.config.ts
-import path from "path"
 resolve: {
     alias: [{
         find : "@Components",
