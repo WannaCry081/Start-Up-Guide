@@ -110,6 +110,8 @@ $ npm run dev
 
 ### 📂 Frontend Folder and File Structure
 
+I have strategically organized my folder and file structure to align with the Model-View-Controller (MVC) architecture, a popular and powerful design pattern widely embraced within the web development community. Utilizing the MVC architecture facilitates a separation of concerns, enabling modular code that is easier to maintain, understand, and scale. By adopting this approach, I have laid a strong foundation for robust and efficient website development, enhancing code reusability and improving overall project manageability.
+
 ```powershell
 📂 frontend
 │
@@ -187,6 +189,8 @@ $ npm run server
 ```
 
 ### 📂 Backend Folder and File Structure
+
+I have strategically organized my folder and file structure to align with the Model-View-Controller (MVC) architecture, a popular and powerful design pattern widely embraced within the web development community. Utilizing the MVC architecture facilitates a separation of concerns, enabling modular code that is easier to maintain, understand, and scale. By adopting this approach, I have laid a strong foundation for robust and efficient website development, enhancing code reusability and improving overall project manageability.
 
 ```powershell
 📂 backend
