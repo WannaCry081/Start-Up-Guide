@@ -1,0 +1,1 @@
+# Firebase Environment Setup
