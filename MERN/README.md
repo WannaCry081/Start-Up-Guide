@@ -21,4 +21,12 @@ If TypeScript is your preference, we've got you covered. Dive into the [TypeScri
 
 ---
 
+### References
+
+[Vite](https://vitejs.dev/)
+[React](https://react.dev/)
+[Tailwindcss](https://tailwindcss.com/)
+[Shadcn-ui](https://ui.shadcn.com/)
+---
+
 Happy Coding! 🚀
