@@ -68,8 +68,8 @@ $ Which color would you like to use as base color? › Zinc
 $ Where is your global CSS file? › › src/styles/index.css
 $ Do you want to use CSS variables for colors? › yes
 $ Where is your tailwind.config.js located? › tailwind.config.js
-$ Configure the import alias for components: › src/@/components
-$ Configure the import alias for utils: › src/@/lib/utils
+$ Configure the import alias for components: › src/components
+$ Configure the import alias for utils: › src/lib/utils
 $ Are you using React Server Components? › no
 ```
 
@@ -78,9 +78,17 @@ After installing the necessary packages and `shadcn-ui`. Next is to configure `t
 ```JavaScript
 // Configure Shadcn-ui
 // Edit tsconfig.json
-"baseUrl": ".",
-"paths": {
-  "@/*": ["./src/*"]
+{
+  "compilerOptions": {
+    // ...
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+    // ...
+  }
 }
 ```
 
@@ -89,10 +97,10 @@ After installing the necessary packages and `shadcn-ui`. Next is to configure `t
 resolve: {
     alias: [{
         find : "@Components",
-        replacement : "/src/@/components"
+        replacement : "/src/components"
     }, {
         find : "@Lib",
-        replacement : "/src/@/lib"
+        replacement : "/src/lib"
     }],
 },
 ```
@@ -115,9 +123,8 @@ I have strategically organized my folder and file structure to align with the Mo
 ├── 📂 node_modules
 ├── 📂 public 
 ├── 📂 src
-│   ├── 📂 @
-│   │   ├── 📂 components
-│   │   └── 📂 lib
+│   ├── 📂 components
+│   ├── 📂 lib
 │   ├── 📂 assets
 │   ├── 📂 layouts
 │   ├── 📂 pages
@@ -168,7 +175,9 @@ $ mkdir src && cd src && touch index.ts
     "type" : "module"
     "scripts": {
         "build" : "tsc",
-        "server" : "nodemon dist/index.js"
+        "watch" : "tsc --watch",
+        "server" : "nodemon dist/index.js",
+        "dev" : "concurrently \"npm:watch\" \"npm:server\""
     },
 }
 ```
@@ -189,19 +198,22 @@ $ mkdir src && cd src && touch index.ts
 
 3. Install necessary packages:
 ```powershell
+# Backend essential packages
+$ npm i express express-async-handler dotenv cookie-parser jsonwebtoken bcryptjs mongoose cors multer
+
 # Typescript and utility packages
 $ npm install typescript --save-dev 
-$ npm i -D @types/node
-$ npm i -D nodemon 
-
-# Backend essential packages
-$ npm i express express-async-handler dotenv cookie-parser jsonwebtoken bcryptjs mongoose cors multer 
+$ npm i -D @types/node @types/express @types/jsonwebtoken @types/bcryptjs 
+$ npm i -D nodemon concurrently
 ```
 4. Build and run the backend:
 ```powershell
 # To run the backend program
 $ npm run build
 $ npm run server
+
+# or just run this command 
+$ npm run dev
 ```
 
 ### 📂 Backend Folder and File Structure
