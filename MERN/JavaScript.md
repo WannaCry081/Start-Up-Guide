@@ -80,8 +80,8 @@ $ Which color would you like to use as base color? › Zinc
 $ Where is your global CSS file? › › src/styles/index.css
 $ Do you want to use CSS variables for colors? › yes
 $ Where is your tailwind.config.js located? › tailwind.config.js
-$ Configure the import alias for components: › src/@/components
-$ Configure the import alias for utils: › src/@/lib/utils
+$ Configure the import alias for components: › src/components
+$ Configure the import alias for utils: › src/lib/utils
 $ Are you using React Server Components? › no
 ```
 
@@ -92,10 +92,10 @@ After installing the necessary packages and `shadcn-ui`. Next is to configure th
 resolve: {
     alias: [{
         find : "@Components",
-        replacement : "/src/@/components"
+        replacement : "/src/components"
     }, {
         find : "@Lib",
-        replacement : "/src/@/lib"
+        replacement : "/src/lib"
     }],
 },
 ```
@@ -118,9 +118,8 @@ I have strategically organized my folder and file structure to align with the Mo
 ├── 📂 node_modules
 ├── 📂 public 
 ├── 📂 src
-│   ├── 📂 @
-│   │   ├── 📂 components
-│   │   └── 📂 lib
+│   ├── 📂 components
+│   ├── 📂 lib
 │   ├── 📂 assets
 │   ├── 📂 layouts
 │   ├── 📂 pages
