@@ -78,9 +78,17 @@ After installing the necessary packages and `shadcn-ui`. Next is to configure `t
 ```JavaScript
 // Configure Shadcn-ui
 // Edit tsconfig.json
-"baseUrl": ".",
-"paths": {
-  "@/*": ["./src/*"]
+{
+  "compilerOptions": {
+    // ...
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+    // ...
+  }
 }
 ```
 
@@ -167,8 +175,9 @@ $ mkdir src && cd src && touch index.ts
     "type" : "module"
     "scripts": {
         "build" : "tsc",
+        "watch" : "tsc --watch",
         "server" : "nodemon dist/index.js",
-        "dev" : "tsc && nodemon dist/index.js"
+        "dev" : "concurrently \"npm:watch\" \"npm:server\""
     },
 }
 ```
@@ -194,8 +203,8 @@ $ npm i express express-async-handler dotenv cookie-parser jsonwebtoken bcryptjs
 
 # Typescript and utility packages
 $ npm install typescript --save-dev 
-$ npm i -D @types/node @types/express
-$ npm i -D nodemon 
+$ npm i -D @types/node @types/express @types/jsonwebtoken @types/bcryptjs 
+$ npm i -D nodemon concurrently
 ```
 4. Build and run the backend:
 ```powershell
